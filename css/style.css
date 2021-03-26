@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/skypurple.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.preloader {
+    width: 120px;
+    height: 120px;
+    border: 15px solid rgb(212, 208, 208);
+    border-top-color: #ff0072;
+    border-top-style: groove;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+    animation: rotation 1s infinite linear;
+}
+
+.container {
+    visibility: hidden;
+    display: grid;
+    grid-template-columns: 60% auto;
+    grid-template-rows: 10% auto;
+    grid-template-areas: "main search" "main results";
+    width: 630px;
+    height: 430px;
+    overflow: hidden;
+    border-radius: 12px;
+    /* border: 2px solid #ffffff; */
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.main-section {
+    grid-area: main;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.5);
+}
+
+.search-city {
+    grid-area: search;
+    grid-area: search;
+    display: grid;
+    grid-template-columns: 70% auto;
+}
+
+.result {
+    grid-area: results;
+    background: white;
+    text-align: center;
+}
+
+.result>* {
+    margin-bottom: 16px;
+}
+
+.result h2 {
+    letter-spacing: 2px;
+}
+
+.result .country {
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #ff0072;
+}
+
+.flag-country {
+    width: 50px;
+}
+
+.region {
+    font-size: .8em;
+}
+
+
+/* .result img {
+    width: 130px;
+    height: 130px;
+} */
+
+.search-city input {
+    height: 100%;
+    outline: none;
+    border: none;
+    padding-left: 12px;
+    font-size: 1em;
+    background: #3b393b;
+    color: white;
+}
+
+.search-city input::placeholder {
+    color: #c6bebe;
+}
+
+.btn-search {
+    background: #ff0072;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-search:hover {
+    background: #a1165c;
+}
+
+.btn-search i {
+    font-size: 2.3em;
+    color: #ffffff;
+}
+
+.data-wheater {
+    color: white;
+    position: absolute;
+    align-items: center;
+    text-align: center;
+}
+
+.deg {
+    font-size: 7em;
+}
+
+.deg::after {
+    content: '°';
+    position: absolute;
+    top: -18px;
+}
+
+.city-name {
+    font-size: 2.2em;
+    color: #ff0072;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
